@@ -37,7 +37,7 @@ public class UserController {
         return userService.findAllUser();
     }
     
-    @PostMapping("/login")
+    @PostMapping("/user/login")
     public Map<String, String> login(@RequestParam("userName") String username, @RequestParam("password") String password) {
     	
     	

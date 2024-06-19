@@ -30,6 +30,10 @@ public class UserService {
 	        return userRepository.findAll();
 	    }
 	    
+	    public int updateUser(String userName, String role, String password) {
+	    	return userRepository.updateUser(userName, role, password);
+	    }
+	    
 	    /*
 
 	    public List<AppUser> findByName(String name) {

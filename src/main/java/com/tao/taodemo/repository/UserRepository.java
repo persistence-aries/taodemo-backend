@@ -20,23 +20,17 @@ public interface UserRepository extends JpaRepository<AppUser, UUID>{
 	
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO app_user (id, username, role, password) VALUES (:id, :username, :role, :password)", nativeQuery = true)
+    @Query(value = "INSERT INTO AppUser (id, username, role, password) VALUES (:id, :username, :role, :password)")
     int addUser(@Param("id") UUID id, @Param("username") String username, @Param("role") String role, @Param("password") String password);
     
     @Query("SELECT id as id, password as password, role as role, username as username FROM AppUser  WHERE username = :username ")
 	List<AppUser> findByUserName(@Param("username") String username);
     
     List<AppUser> findAll();
-/*	
-	@Query("SELECT * FROM app_user a WHERE a.username > :username ")
-	List<AppUser> findByUserName(@Param("username") String userName);
-	
-	@Query("SELECT * FROM app_user a WHERE a.username = :username AND a.password = :password")
-	List<AppUser> findByUserNameAndPassword(@Param("username") String userName, @Param("password") String password);
 	
 	@Modifying
-	@Query("UPDATE app_user SET role = :role, password = :password WHERE username = :username")
+	@Query("UPDATE AppUser SET role = :role, password = :password WHERE username = :username")
 	int updateUser(@Param("username") String userName, @Param("role") String role, @Param("password") String password);
-*/
+
 	
 }
