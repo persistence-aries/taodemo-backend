@@ -13,26 +13,6 @@ import com.tao.taodemo.repository.UserRepository;
 
 @Service
 public class UserService {
-<<<<<<< Updated upstream
-	   @Autowired
-	   private UserRepository userRepository;
-	   
-	    @Transactional
-	    public void createUser(String username, String role, String password) {
-	        UUID id = UUID.randomUUID();
-	        userRepository.addUser(id, username, role, password);
-	    }
-	   
-	    public List<AppUser> findByUserName(String username) {
-	        return userRepository.findByUserName(username);
-	    }
-	    
-	    public List<AppUser> findAllUser() {
-	        return userRepository.findAll();
-	    }
-	    
-	    /*
-=======
 	@Autowired
 	private UserRepository userRepository;
 
@@ -63,6 +43,5 @@ public class UserService {
 		}
 		return result;
 	}
->>>>>>> Stashed changes
 
 }

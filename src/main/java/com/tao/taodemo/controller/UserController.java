@@ -30,49 +30,8 @@ public class UserController {
 		String userName = parameter.get("userName");
 		String role = parameter.get("role");
 		String password = parameter.get("password");
-<<<<<<< Updated upstream
-        userService.createUser(userName, role, password);
-        return parameter;
-    }
-	
-    @GetMapping("/users/all")
-    public List<AppUser> getAllUsers() {
-        return userService.findAllUser();
-    }
-    
-    @PostMapping("/login")
-    public Map<String, String> login(@RequestParam("userName") String username, @RequestParam("password") String password) {
-    	
-    	
-        Map<String, String> response = new HashMap<>();
-        response.put("message", "Login successful");
-        response.put("username", username);
-        
-    	return response;
-    }
-	
-	
-/*	
-	@PostMapping("/user")
-	public int addUser(@RequestBody Map<String, String> parameter) throws Exception {
-		String userName = parameter.get("userName");
-		String role = parameter.get("role");
-		String password = parameter.get("password");
-		int num = userService.addUser(userName, role, password);
-		return num;
-	}*/
-/*	
-	@PostMapping("/user/createWithList")
-	public int createWithUserList(@RequestBody List<Map<String, String>> parameterList) throws Exception {
-		int result = 0;
-		for (Map<String, String> param : parameterList) {
-			result = result + userService.addUser(param.get("userName"), param.get("role"), param.get("password"));
-		}
-		return result;
-=======
 		userService.createUser(userName, role, password);
 		return parameter;
->>>>>>> Stashed changes
 	}
 
 	@GetMapping("/users/all")
