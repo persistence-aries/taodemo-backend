@@ -13,13 +13,13 @@ public class SwaggerConfig {
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
-                .info(new Info()
+                	.info(new Info()
                     .title("TAO Demo Spring Boot 3 API")
                     .version("1.0")
                     .description("Sample Spring Boot 3 project with Swagger/OpenAPI integration")
                     .contact(new Contact()
-                        .name("Aries Chang")
-                        .email("chang.persistence@gmail.com")
-                        .url("https://example.com")));
+                    .name("Aries Chang")
+                    .email("chang.persistence@gmail.com")
+                    .url("https://example.com")));
     }
 }
